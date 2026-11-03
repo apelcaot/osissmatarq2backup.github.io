@@ -350,36 +350,7 @@
             
             <!-- Countdown Banner for Flagship Event -->
             <div class="bg-gradient-to-r from-taraNavy via-taraNavy-800 to-indigo-950 p-6 sm:p-10 rounded-3xl border border-taraGold/30 shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
-                <div class="space-y-3 text-center lg:text-left">
-                    <span class="bg-taraGold/20 text-taraGold px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border border-taraGold/30">
-                        <i class="fa-solid fa-fire text-amber-400"></i> Event Utama Terdekat
-                    </span>
-                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white">TARAKUPANG 2026 (Tarakanita Cup)</h3>
-                    <p class="text-slate-300 text-sm max-w-xl">Kompetisi Seni, Olahraga, & E-Sports antar SMA se-Jabodetabek. Persiapkan tim sekolahmu dan jadilah juara!</p>
-                </div>
-
-                <!-- Live Countdown -->
-                <div class="flex items-center gap-3 sm:gap-4 text-center">
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-days">14</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Hari</span>
-                    </div>
-                    <span class="text-xl font-bold text-taraGold">:</span>
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-hours">08</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Jam</span>
-                    </div>
-                    <span class="text-xl font-bold text-taraGold">:</span>
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-mins">42</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Menit</span>
-                    </div>
-                    <span class="text-xl font-bold text-taraGold">:</span>
-                    <div class="bg-white/10 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-white/10 min-w-[65px] sm:min-w-[80px]">
-                        <span class="block text-2xl sm:text-4xl font-black text-taraGold" id="cd-secs">15</span>
-                        <span class="text-[10px] sm:text-xs text-slate-300 uppercase font-semibold">Detik</span>
-                    </div>
-                </div>
+                
             </div>
 
             <!-- Program Kerja Filter & Showcase Header -->
@@ -742,27 +713,7 @@
             });
         }
 
-        // Countdown Timer Logic
-        function startCountdown() {
-            let targetDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days ahead
-            setInterval(() => {
-                let now = new Date().getTime();
-                let distance = targetDate - now;
-
-                if (distance < 0) return;
-
-                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
-                document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('cd-mins').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('cd-secs').innerText = String(seconds).padStart(2, '0');
-            }, 1000);
-        }
-
+        
         // Form Aspirasi Submission
         function submitAspirasi(e) {
             e.preventDefault();
@@ -836,8 +787,7 @@
             renderPengurus();
             renderEvents();
             renderGallery();
-            renderAnnouncements();
-            startCountdown();
+            renderAnnouncements(); 
         }
     </script>
 </body>
